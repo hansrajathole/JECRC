@@ -8,17 +8,17 @@ require("dotenv").config()
 
 
 
-// middleware
+// // middleware
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(cors("*"))
 
 
-// base url
+// // base url
 app.use("/", authRouter)
 app.use("/users",userRouter)
 app.use("/products", productRouter)
 
 
-
+http://localhost:3000/users/register
 module.exports = app

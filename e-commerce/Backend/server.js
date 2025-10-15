@@ -5,7 +5,7 @@ const connect = require("./src/db/db")
 const PORT = config.PORT
 
 
-process.env.PORT
+// process.env.PORT
 
 
 app.listen(PORT , ()=>{
