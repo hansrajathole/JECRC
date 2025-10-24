@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-const Register = () => {
+const Login = () => {
 
   
   const [email, setemail] = useState('')
@@ -73,4 +73,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Login
