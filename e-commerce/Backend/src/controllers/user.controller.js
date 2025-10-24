@@ -82,7 +82,12 @@ module.exports.registerPostController = async function(req, res) {
         delete user._doc.password
 
 
-        res.status(201).json({message : "register successfully", user})
+        const token = await jwt.sign({
+            id : user._id,
+            username : user.username
+        },config.JWT_SECRET)
+
+        res.status(201).json({message : "register successfully", user , token})
 
     } catch (error) {
         console.log(error.message);

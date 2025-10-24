@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
+
+  const token = localStorage.getItem("token")
+  const navigate = useNavigate()
   return (
     <div className='h-15 w-full bg-red-200 flex justify-between items-center px-5'>
       <h1 className='font-semibold text-2xl'>Shoppy</h1>
@@ -10,8 +14,17 @@ const Navbar = () => {
       </div>
       <div className='flex gap-3'>
         <button className='border px-2.5 py-1 rounded bg-neutral-500 text-white'>Create</button>
-    <Link to={"/login"} className='border px-2.5 py-1 rounded bg-blue-400 text-white'>Login</Link>
+        {
+          token ?  <button
+          onClick={()=>{
+            localStorage.removeItem("token")
+            navigate('/login')
+          }}
+           className='border px-2.5 py-1 rounded bg-blue-400 text-white'>Logout</button> :  
+          <Link to={"/login"} className='border px-2.5 py-1 rounded bg-blue-400 text-white'>Login</Link>
 
+
+        }
       </div>
     </div>
   )
