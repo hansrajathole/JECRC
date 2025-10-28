@@ -13,7 +13,13 @@ const Navbar = () => {
         <i className="ri-search-line"></i>
       </div>
       <div className='flex gap-3'>
-        <button className='border px-2.5 py-1 rounded bg-neutral-500 text-white'>Create</button>
+        {
+          token &&  <button className='border px-2.5 py-1 rounded bg-neutral-500 text-white'
+          onClick={()=>{
+            navigate("/product/create")
+          }}
+          >Create</button>
+        }
         {
           token ?  <button
           onClick={()=>{

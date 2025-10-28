@@ -3,6 +3,7 @@ const config = require("../config/config")
 
 
 const connect = ()=>{
+    console.log(config.MONGO_URI);
     
     mongoose.connect(config.MONGO_URI)
     .then(()=>{
